@@ -1,0 +1,76 @@
+# 新闻源配置
+# 国内源约占 60%，国际源约占 40%
+
+domestic:
+  - name: 安全内参
+    url: https://www.secrss.com/feed
+    type: rss
+    lang: zh
+    weight: 10
+  - name: 国家网信办 - 数据安全
+    url: https://www.cac.gov.cn/channel/4/index.html
+    type: webpage
+    lang: zh
+    weight: 9
+  - name: FreeBuf
+    url: https://www.freebuf.com/feed
+    type: rss
+    lang: zh
+    weight: 8
+  - name: 国家数据局
+    url: https://www.ndata.gov.cn/zwgk/zcfg/
+    type: webpage
+    lang: zh
+    weight: 8
+  - name: 嘶吼 RoarTalk
+    url: https://www.4hou.com/feed
+    type: rss
+    lang: zh
+    weight: 7
+  - name: 安在
+    url: https://www.anquan.co/feed
+    type: rss
+    lang: zh
+    weight: 6
+  - name: 数说安全
+    url: https://www.shushuosecurity.com/feed
+    type: rss
+    lang: zh
+    weight: 6
+  - name: 看雪学苑
+    url: https://bbs.kanxue.com/feed
+    type: rss
+    lang: zh
+    weight: 5
+
+international:
+  - name: BleepingComputer
+    url: https://www.bleepingcomputer.com/feed/
+    type: rss
+    lang: en
+    weight: 10
+  - name: The Hacker News
+    url: https://feeds.feedburner.com/TheHackersNews
+    type: rss
+    lang: en
+    weight: 10
+  - name: CISA Alerts
+    url: https://www.cisa.gov/cybersecurity-advisories.xml
+    type: rss
+    lang: en
+    weight: 9
+  - name: OWASP Blog
+    url: https://owasp.org/blog/feed.xml
+    type: rss
+    lang: en
+    weight: 7
+  - name: Krebs on Security
+    url: https://krebsonsecurity.com/feed/
+    type: rss
+    lang: en
+    weight: 7
+  - name: PortSwigger Research
+    url: https://portswigger.net/research/rss
+    type: rss
+    lang: en
+    weight: 6
