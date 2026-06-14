@@ -6,9 +6,11 @@
 import os
 import re
 import sys
+import random
 import yaml
 import httpx
 import feedparser
+from collections import defaultdict
 from datetime import datetime, date, timezone
 from pathlib import Path
 from openai import OpenAI
@@ -85,12 +87,23 @@ def fetch_all_news(sources: dict) -> tuple[list[dict], list[dict]]:
         print(f"    → {len(filtered)} relevant items")
     return domestic_news, intl_news
 
+def sample_per_source(items: list, max_per_source: int = 3) -> list:
+    groups = defaultdict(list)
+    for item in items:
+        groups[item["source"]].append(item)
+    sampled = []
+    for src, src_items in groups.items():
+        sampled.extend(src_items[:max_per_source])
+    random.shuffle(sampled)
+    return sampled
+
 def build_llm_prompt(domestic_news: list, intl_news: list, today: str) -> str:
     def fmt_items(items, label):
         if not items:
             return f"## {label}\n（暂无相关新闻）\n"
+        sampled = sample_per_source(items, max_per_source=3)
         lines = [f"## {label}"]
-        for i, item in enumerate(items[:8], 1):
+        for i, item in enumerate(sampled, 1):
             lines.append(
                 f"{i}. [{item['title']}]({item['link']})\n"
                 f"   来源: {item['source']} | {item['summary'][:200]}"
@@ -104,6 +117,7 @@ def build_llm_prompt(domestic_news: list, intl_news: list, today: str) -> str:
 - 语言: 简体中文
 - 风格: 类似科技日报，用 emoji 点缀，每条新闻带链接
 - 国内内容约占60%，国外约占40%
+- 尽量覆盖不同来源，避免集中在同一网站
 - 按6个板块分类：
   1. 政策合规 (国内政策法规类)
   2. 漏洞威胁 (数据泄露、漏洞事件、攻击)
@@ -111,7 +125,7 @@ def build_llm_prompt(domestic_news: list, intl_news: list, today: str) -> str:
   4. 行业动向 (投融资、报告、趋势)
   5. 开源工具 (安全开源项目)
   6. 社媒分享 (社交媒体上的讨论)
-- 每个板块3-5条，每条80-150字
+- 每个板块2-3条，每条80-150字
 - 今日摘要放在开头的 ``` 代码块中，正文不要用代码块包裹
 - 最终输出为完整的 Markdown 格式（不含front matter，只输出body部分，不要将正文放入代码块）
 
