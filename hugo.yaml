@@ -66,6 +66,8 @@ params:
     logo:
       path: https://www.asguarder.com/UserFiles/Article/cae89efe-6d20-45b6-b08a-4883a41bb55b.png
       dark: https://www.asguarder.com/UserFiles/Article/cae89efe-6d20-45b6-b08a-4883a41bb55b.png
+      width: 130
+      height: 60
 
   footer:
     displayCopyright: true
