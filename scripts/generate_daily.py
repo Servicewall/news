@@ -164,6 +164,11 @@ def write_daily_report(body: str, today: date):
     filename = today.strftime("%Y-%m-%d.md")
     filepath = month_dir / filename
 
+    # Strip outer code block if LLM wrapped entire output
+    lines = body.split("\n")
+    if len(lines) > 2 and lines[0].strip().startswith("```") and lines[-1].strip() == "```":
+        body = "\n".join(lines[1:-1])
+
     # Extract description from first non-code-block line
     lines = body.split("\n")
     desc_line = ""
@@ -181,7 +186,6 @@ breadcrumbs: false
 comments: true
 description: "{desc_line}"
 ---
-
 """
     content = front_matter + body
     filepath.write_text(content, encoding="utf-8")
