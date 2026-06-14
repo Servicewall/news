@@ -137,8 +137,11 @@ def call_llm(prompt: str) -> str:
         model="deepseek-v4-flash",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
-        max_tokens=4096,
+        max_tokens=16384,
     )
+    if resp.choices[0].finish_reason == "length":
+        print("[ERROR] LLM response truncated")
+        sys.exit(1)
     return resp.choices[0].message.content
 
 def ensure_month_dir(d: date) -> Path:
