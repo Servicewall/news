@@ -11,8 +11,8 @@ cascade:
 {{< /hextra/hero-headline >}}
 
 <div style="margin-top: 2rem; margin-bottom: 4rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-  {{< hextra/hero-badge link="/2026-06/2026-06-14" >}}📡 阅读今日日报{{< /hextra/hero-badge >}}
-  {{< hextra/hero-badge link="/blog" >}}📊 浏览安全周报{{< /hextra/hero-badge >}}
+  {{< hextra/hero-badge link="/news/2026-06/2026-06-14" >}}📡 阅读今日日报{{< /hextra/hero-badge >}}
+  {{< hextra/hero-badge link="/news/blog" >}}📊 浏览安全周报{{< /hextra/hero-badge >}}
   {{< hextra/hero-badge link="https://github.com/servicewall/news" >}}🤝 提交反馈{{< /hextra/hero-badge >}}
 </div>
 
@@ -34,7 +34,7 @@ cascade:
 
 {{< cards cols="3" >}}
 <!-- LATEST_6_CARDS_START -->
-{{< card link="/2026-06/2026-06-14" title="数据安全洞察日报 2026/06/14" subtitle="国家网信办发布数据跨境新规，全球最大 API 泄露事件曝光超 8 亿条记录，OWASP 发布 API 安全 Top 10 更新草案" icon="shield-exclamation" >}}
+{{< card link="/news/2026-06/2026-06-14" title="数据安全洞察日报 2026/06/14" subtitle="国家网信办发布数据跨境新规，全球最大 API 泄露事件曝光超 8 亿条记录，OWASP 发布 API 安全 Top 10 更新草案" icon="shield-exclamation" >}}
 <!-- LATEST_6_CARDS_END -->
 {{< /cards >}}
 
@@ -43,10 +43,10 @@ cascade:
 {{% steps %}}
 
 ### 1. 建立宏观视野
-初次访问？建议浏览 [安全周报](/blog/)，快速梳理近期行业最重要的变化趋势。
+初次访问？建议浏览 [安全周报](/news/blog/)，快速梳理近期行业最重要的变化趋势。
 
 ### 2. 保持每日同步
-紧跟技术最前沿，直接进入 [安全日报归档](/2026-06/2026-06-14/)。每天仅需 5 分钟，同步全球安全动态。
+紧跟技术最前沿，直接进入 [安全日报归档](/news/2026-06/2026-06-14/)。每天仅需 5 分钟，同步全球安全动态。
 
 ### 3. 深入专题研究
 关注数据合规政策解读、API 安全最佳实践等深度内容。
