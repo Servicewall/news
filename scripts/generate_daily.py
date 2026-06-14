@@ -134,7 +134,7 @@ def call_llm(prompt: str) -> str:
         base_url=endpoint,
     )
     resp = client.chat.completions.create(
-        model="deepseek-v4-flash-free",
+        model="deepseek-v4-flash",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
         max_tokens=4096,
