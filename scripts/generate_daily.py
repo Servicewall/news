@@ -123,10 +123,10 @@ def build_llm_prompt(domestic_news: list, intl_news: list, today: str) -> str:
 """
 
 def call_llm(prompt: str) -> str:
-    token = os.environ.get("GH_MODELS_TOKEN")
-    endpoint = os.environ.get("GH_MODELS_ENDPOINT", "https://models.inference.ai.azure.com")
+    token = os.environ.get("DEEPSEEK_API_KEY")
+    endpoint = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
     if not token:
-        print("[ERROR] GH_MODELS_TOKEN not set")
+        print("[ERROR] DEEPSEEK_API_KEY not set")
         sys.exit(1)
 
     client = OpenAI(
@@ -134,7 +134,7 @@ def call_llm(prompt: str) -> str:
         base_url=endpoint,
     )
     resp = client.chat.completions.create(
-        model="gpt-4o",
+        model="deepseek-v4-flash-free",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
         max_tokens=4096,
