@@ -112,8 +112,8 @@ def build_llm_prompt(domestic_news: list, intl_news: list, today: str) -> str:
   5. 开源工具 (安全开源项目)
   6. 社媒分享 (社交媒体上的讨论)
 - 每个板块3-5条，每条80-150字
-- 开头用 ``` 代码块写今日摘要（5-6行概括头条）
-- 最终输出为完整的 Markdown 格式（不含front matter，只输出body部分）
+- 今日摘要放在开头的 ``` 代码块中，正文不要用代码块包裹
+- 最终输出为完整的 Markdown 格式（不含front matter，只输出body部分，不要将正文放入代码块）
 
 原始新闻素材：
 
@@ -164,8 +164,14 @@ def write_daily_report(body: str, today: date):
     filename = today.strftime("%Y-%m-%d.md")
     filepath = month_dir / filename
 
-    # Extract first line for description
-    desc_line = body.split("\n")[0].strip().replace("`", "").strip()[:150]
+    # Extract description from first non-code-block line
+    lines = body.split("\n")
+    desc_line = ""
+    for line in lines:
+        stripped = line.strip().strip("`").strip()
+        if stripped:
+            desc_line = stripped[:150]
+            break
 
     front_matter = f"""---
 linkTitle: {today.strftime('%m-%d')} 安全日报
