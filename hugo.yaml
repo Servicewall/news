@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: 安全洞察日报 | 数据安全 & API安全 每日精选
+title: 数据安全洞察日报 | 数据安全 & API安全 每日精选
 
 timezone: Asia/Shanghai
 enableRobotsTXT: true
@@ -30,7 +30,7 @@ markup:
 menu:
   main:
     - identifier: documentation
-      name: 安全日报
+      name: 数据安全日报
       pageRef: /
       weight: 1
     - identifier: blog
@@ -54,18 +54,18 @@ menu:
         icon: github
 
 params:
-  description: 专注数据安全与API安全的每日资讯聚合站。为您精选国内外数据泄露、合规政策、API漏洞、安全技术等前沿动态，洞悉网络安全最新趋势。
+  description: 专注数据安全与API安全的每日资讯聚合站。为您精选国内外数据泄露、合规政策、API漏洞等前沿动态，洞悉数据安全最新趋势。
 
   author:
-    name: "安全洞察日报"
+    name: "数据安全洞察日报"
     email: ""
 
   navbar:
     displayTitle: false
     displayLogo: true
     logo:
-      path: images/logo.png
-      dark: images/logo-dark.png
+      path: https://demo.servicewall.cn/favicon.png
+      dark: https://demo.servicewall.cn/favicon.png
       width: 175
       height: 50
 

@@ -1,5 +1,5 @@
 ---
-title: 安全洞察日报
+title: 数据安全洞察日报
 breadcrumbs: false
 comments: true
 cascade:
@@ -7,7 +7,7 @@ cascade:
 ---
 
 {{< hextra/hero-headline >}}
-安全洞察日报
+数据安全洞察日报
 {{< /hextra/hero-headline >}}
 
 <div style="margin-top: 2rem; margin-bottom: 4rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
@@ -19,7 +19,7 @@ cascade:
 ---
 
 {{< callout type="important" emoji="🔒" >}}
-  **站点定位**：聚焦数据安全与 API 安全领域，每日精筛国内外重大事件，为您提供高价值的决策参考。
+  **站点定位**：聚焦数据安全与 API 安全领域，每日精筛国内外重大事件，提供高价值的决策参考。
 {{< /callout >}}
 
 ## 💎 核心价值
@@ -34,7 +34,7 @@ cascade:
 
 {{< cards cols="3" >}}
 <!-- LATEST_6_CARDS_START -->
-{{< card link="/2026-06/2026-06-14" title="安全洞察日报 2026/06/14" subtitle="国家网信办发布数据跨境新规，全球最大 API 泄露事件曝光超 8 亿条记录，OWASP 发布 API 安全 Top 10 更新草案" icon="shield-exclamation" >}}
+{{< card link="/2026-06/2026-06-14" title="数据安全洞察日报 2026/06/14" subtitle="国家网信办发布数据跨境新规，全球最大 API 泄露事件曝光超 8 亿条记录，OWASP 发布 API 安全 Top 10 更新草案" icon="shield-exclamation" >}}
 <!-- LATEST_6_CARDS_END -->
 {{< /cards >}}
 

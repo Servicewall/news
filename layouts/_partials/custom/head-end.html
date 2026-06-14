@@ -1,0 +1,4 @@
+{{- with resources.Get "css/custom.css" -}}
+  {{- $css := . | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- end -}}
