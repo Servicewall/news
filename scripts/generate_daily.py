@@ -219,10 +219,8 @@ def main():
         print("[WARN] No news found, skipping generation.")
         return
 
-    # Balance ratio: aim for ~60% domestic
-    max_intl = max(3, int(len(domestic) * 0.4 / 0.6))
-    if len(intl) > max_intl:
-        intl = intl[:max_intl]
+    # Balance ratio: per-source sampling preserves diversity
+    intl = sample_per_source(intl, max_per_source=3)
 
     print("Calling LLM...")
     prompt = build_llm_prompt(domestic, intl, today.strftime("%Y/%-m/%-d"))
