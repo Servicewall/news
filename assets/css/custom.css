@@ -1,0 +1,131 @@
+/* ============================================================== */
+/* 安全洞察日报 - 深蓝 + 红色警示 配色方案                        */
+/* ============================================================== */
+
+/* -- 深蓝主色调 / 红色警示 -- */
+:root {
+  --primary-hue: 215deg;
+  --primary-saturation: 80%;
+  --primary-lightness: 45%;
+  --color-red: #DC2626;
+  --color-red-dark: #B91C1C;
+  --color-red-light: #FEE2E2;
+  --color-blue-deep: #1E3A5F;
+  --color-blue-mid: #1E40AF;
+  --accent-color: var(--color-red);
+}
+
+/* 浅色主题文字对比度增强 */
+:root {
+  --hx-text-gray-500: #4B5563;
+  --hx-text-gray-600: #2D3748;
+  --hx-text-gray-700: #1A202C;
+  --hx-text-gray-900: #111827;
+  --hx-border-gray-200: #D1D5DB;
+  --hx-border-gray-300: #B5BAC0;
+}
+
+/* 导航栏顶部警示条 */
+.nav-container {
+  border-bottom: 3px solid var(--color-red) !important;
+}
+
+/* 暗色主题覆盖 */
+.dark {
+  --color-red: #EF4444;
+  --color-red-dark: #DC2626;
+  --color-red-light: #7F1D1D;
+  --color-blue-deep: #0F172A;
+  --color-blue-mid: #1E3A8A;
+}
+
+/* 文章中的红色强调标签 */
+strong:is(html *) {
+  color: var(--color-red);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.dark strong:is(html *) {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* 章节标题前的红色装饰 */
+h2:before {
+  content: "▍";
+  color: var(--color-red);
+  margin-right: 4px;
+}
+
+h3:before {
+  content: "▎";
+  color: var(--color-blue-mid);
+  margin-right: 4px;
+}
+
+.dark h3:before {
+  color: var(--color-red);
+}
+
+/* 今日摘要代码块主题 */
+pre code {
+  border-left: 3px solid var(--color-red) !important;
+}
+
+/* 卡片 hover 红色边框 */
+.hextra-card:hover {
+  border-color: var(--color-red) !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15) !important;
+}
+
+/* 页脚深蓝风格 */
+.footer-wrapper {
+  border-top: 2px solid var(--color-blue-deep);
+}
+
+/* 侧边栏活跃项标记 */
+.sidebar-active-item {
+  border-left: 3px solid var(--color-red) !important;
+  color: var(--color-red) !important;
+}
+
+/* 引用块风格 */
+blockquote {
+  border-left-color: var(--color-red) !important;
+  background: rgba(220, 38, 38, 0.03);
+}
+
+.dark blockquote {
+  background: rgba(239, 68, 68, 0.05);
+}
+
+/* 搜索框焦点红色 */
+.search-input:focus {
+  border-color: var(--color-red) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
+}
+
+/* hero badge 红色调 */
+.hextra-hero-badge {
+  border-color: var(--color-red) !important;
+  color: var(--color-red) !important;
+}
+
+/* 安全主题徽章 */
+.badge-red {
+  background: var(--color-red);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-blue {
+  background: var(--color-blue-mid);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

@@ -1,0 +1,18 @@
+# Hugo output
+/public/
+
+# Dependencies
+/node_modules/
+
+# IDE
+/.vscode/
+/.devcontainer/
+/.gitpod.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Hugo
+/resources/
+/hugo_stats.json
