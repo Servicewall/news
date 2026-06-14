@@ -64,10 +64,8 @@ params:
     displayTitle: false
     displayLogo: true
     logo:
-      path: https://demo.servicewall.cn/favicon.png
-      dark: https://demo.servicewall.cn/favicon.png
-      width: 175
-      height: 50
+      path: https://www.asguarder.com/UserFiles/Article/cae89efe-6d20-45b6-b08a-4883a41bb55b.png
+      dark: https://www.asguarder.com/UserFiles/Article/cae89efe-6d20-45b6-b08a-4883a41bb55b.png
 
   footer:
     displayCopyright: true
