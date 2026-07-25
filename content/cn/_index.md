@@ -11,7 +11,7 @@ cascade:
 {{< /hextra/hero-headline >}}
 
 <div style="margin-top: 2rem; margin-bottom: 4rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-  {{< hextra/hero-badge link="/news/2026-06/2026-06-14" >}}📡 阅读今日日报{{< /hextra/hero-badge >}}
+  {{< hextra/hero-badge link="/news/2026-07/2026-07-24" >}}📡 阅读今日日报{{< /hextra/hero-badge >}}
   {{< hextra/hero-badge link="/news/blog" >}}📊 浏览安全周报{{< /hextra/hero-badge >}}
   {{< hextra/hero-badge link="https://github.com/servicewall/news" >}}🤝 提交反馈{{< /hextra/hero-badge >}}
 </div>
@@ -34,7 +34,12 @@ cascade:
 
 {{< cards cols="3" >}}
 <!-- LATEST_6_CARDS_START -->
-{{< card link="/news/2026-06/2026-06-14" title="数据安全洞察日报 2026/06/14" subtitle="国家网信办发布数据跨境新规，全球最大 API 泄露事件曝光超 8 亿条记录，OWASP 发布 API 安全 Top 10 更新草案" icon="shield-exclamation" >}}
+{{< card link="/news/2026-07/2026-07-24" title="安全洞察日报 2026/7/24" subtitle="📅 2026年7月24日 | 数据安全与API安全日报" icon="shield-exclamation" >}}
+{{< card link="/news/2026-07/2026-07-23" title="安全洞察日报 2026/7/23" subtitle="📅 2026年7月23日 | 数据安全与API安全日报" icon="eye" >}}
+{{< card link="/news/2026-07/2026-07-22" title="安全洞察日报 2026/7/22" subtitle="📅 2026年7月22日 | 数据安全与API安全日报" icon="bell" >}}
+{{< card link="/news/2026-07/2026-07-21" title="安全洞察日报 2026/7/21" subtitle="📅 2026年7月21日 | 数据安全与API安全日报" icon="academic-cap" >}}
+{{< card link="/news/2026-07/2026-07-20" title="安全洞察日报 2026/7/20" subtitle="📅 2026年7月20日 | 数据安全与API安全日报" icon="document-text" >}}
+{{< card link="/news/2026-07/2026-07-19" title="安全洞察日报 2026/7/19" subtitle="📅 2026年7月19日 | 数据安全与API安全日报" icon="chart-bar" >}}
 <!-- LATEST_6_CARDS_END -->
 {{< /cards >}}
 

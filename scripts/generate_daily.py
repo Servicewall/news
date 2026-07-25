@@ -84,7 +84,7 @@ def fetch_all_news(sources: dict) -> tuple[list[dict], list[dict]]:
             domestic_news.extend(filtered)
         else:
             intl_news.extend(filtered)
-        print(f"    → {len(filtered)} relevant items")
+        print(f"    \u2192 {len(filtered)} relevant items")
     return domestic_news, intl_news
 
 def sample_per_source(items: list, max_per_source: int = 3) -> list:
@@ -183,7 +183,7 @@ def write_daily_report(body: str, today: date):
     if len(lines) > 2 and lines[0].strip().startswith("```") and lines[-1].strip() == "```":
         body = "\n".join(lines[1:-1])
 
-    # Extract description from first non-code-block line
+    # Extract description from first meaningful line
     lines = body.split("\n")
     desc_line = ""
     for line in lines:
@@ -191,6 +191,8 @@ def write_daily_report(body: str, today: date):
         if stripped:
             desc_line = stripped[:150]
             break
+    # Escape double quotes for YAML double-quoted string
+    desc_line = desc_line.replace('"', '\\"')
 
     front_matter = f"""---
 linkTitle: {today.strftime('%m-%d')} 安全日报
@@ -203,8 +205,76 @@ description: "{desc_line}"
 """
     content = front_matter + body
     filepath.write_text(content, encoding="utf-8")
-    print(f"  ✓ Written: {filepath}")
+    print(f"  \u2713 Written: {filepath}")
     return filepath
+
+def get_latest_daily_reports(limit: int = 6) -> list[dict]:
+    """Collect the latest daily reports across monthly dirs."""
+    reports = []
+    for month_dir in sorted(CONTENT_DIR.iterdir(), reverse=True):
+        if not month_dir.is_dir() or not re.match(r"\d{4}-\d{2}", month_dir.name):
+            continue
+        for f in sorted(month_dir.glob("*-*-*.md"), reverse=True):
+            if f.name == "_index.md":
+                continue
+            content = f.read_text(encoding="utf-8")
+            # parse front matter
+            m = re.match(r"---\s*\n(.*?)\n---", content, re.DOTALL)
+            if not m:
+                continue
+            fm = yaml.safe_load(m.group(1))
+            # extract first meaningful text line as subtitle
+            body = content[m.end():].strip()
+            first_line = ""
+            for line in body.split("\n"):
+                stripped = line.strip().strip("`").strip()
+                if stripped and not stripped.startswith("---"):
+                    first_line = stripped[:150]
+                    break
+            reports.append({
+                "path": f"/news/{month_dir.name}/{f.stem}",
+                "title": fm.get("title", f.stem),
+                "subtitle": first_line,
+            })
+            if len(reports) >= limit:
+                return reports
+    return reports
+
+
+def update_homepage_cards(reports: list[dict]):
+    """Update the latest-6 cards and hero badge link in the homepage _index.md."""
+    index_path = CONTENT_DIR / "_index.md"
+    content = index_path.read_text(encoding="utf-8")
+
+    # Update hero badge "阅读今日日报" link to point to the latest report
+    if reports:
+        latest = reports[0]
+        content = re.sub(
+            r'(hextra/hero-badge link=")/news/[^"]*("[^>]*>.*?阅读今日日报.*?{{\s*< /\s*hextra/hero-badge\s*>\s*}})',
+            rf'\1{latest["path"]}\2',
+            content,
+        )
+
+    # Update latest-6 cards section
+    cards = []
+    for r in reports:
+        icon = random.choice(["shield-exclamation", "eye", "bell", "academic-cap", "document-text", "chart-bar"])
+        cards.append(
+            f'{{{{< card link="{r["path"]}" title="{r["title"]}" '
+            f'subtitle="{r["subtitle"]}" icon="{icon}" >}}}}'
+        )
+    card_block = "\n".join(cards)
+
+    new_content = re.sub(
+        r"<!-- LATEST_6_CARDS_START -->.*?<!-- LATEST_6_CARDS_END -->",
+        f"<!-- LATEST_6_CARDS_START -->\n{card_block}\n<!-- LATEST_6_CARDS_END -->",
+        content,
+        flags=re.DOTALL,
+    )
+    if new_content != content:
+        index_path.write_text(new_content, encoding="utf-8")
+        print(f"  \u2713 Updated homepage latest cards ({len(reports)} reports)")
+
 
 def main():
     today = date.today()
@@ -214,6 +284,10 @@ def main():
     print("Fetching news...")
     domestic, intl = fetch_all_news(sources)
     print(f"\nTotal: domestic={len(domestic)}, intl={len(intl)}")
+
+    # Always update homepage cards with latest reports
+    reports = get_latest_daily_reports(limit=6)
+    update_homepage_cards(reports)
 
     if not domestic and not intl:
         print("[WARN] No news found, skipping generation.")
