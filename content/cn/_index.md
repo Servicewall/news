@@ -34,12 +34,12 @@ cascade:
 
 {{< cards cols="3" >}}
 <!-- LATEST_6_CARDS_START -->
-{{< card link="/news/2026-07/2026-07-24" title="安全洞察日报 2026/7/24" subtitle="📅 2026年7月24日 | 数据安全与API安全日报" icon="shield-exclamation" >}}
-{{< card link="/news/2026-07/2026-07-23" title="安全洞察日报 2026/7/23" subtitle="📅 2026年7月23日 | 数据安全与API安全日报" icon="eye" >}}
-{{< card link="/news/2026-07/2026-07-22" title="安全洞察日报 2026/7/22" subtitle="📅 2026年7月22日 | 数据安全与API安全日报" icon="bell" >}}
-{{< card link="/news/2026-07/2026-07-21" title="安全洞察日报 2026/7/21" subtitle="📅 2026年7月21日 | 数据安全与API安全日报" icon="academic-cap" >}}
-{{< card link="/news/2026-07/2026-07-20" title="安全洞察日报 2026/7/20" subtitle="📅 2026年7月20日 | 数据安全与API安全日报" icon="document-text" >}}
-{{< card link="/news/2026-07/2026-07-19" title="安全洞察日报 2026/7/19" subtitle="📅 2026年7月19日 | 数据安全与API安全日报" icon="chart-bar" >}}
+{{< card link="/news/2026-07/2026-07-24" title="安全洞察日报 2026/7/24" subtitle="📅 2026年7月24日 | 数据安全与API安全日报" icon="document-text" >}}
+{{< card link="/news/2026-07/2026-07-23" title="安全洞察日报 2026/7/23" subtitle="今日摘要" icon="document-text" >}}
+{{< card link="/news/2026-07/2026-07-22" title="安全洞察日报 2026/7/22" subtitle="📅 今日摘要" icon="bell" >}}
+{{< card link="/news/2026-07/2026-07-21" title="安全洞察日报 2026/7/21" subtitle="今日摘要：🔍 国内公安部通报37款违规应用，小程序整治加速；梆梆安全报告显示超八成APP存隐私违规。🌐 国外方面，SharePoint RCE漏洞遭积极利用，AWS Kiro IDE曝出配置重写漏洞，Anubis勒索团伙威胁Coca-Cola Fairlife数据泄露。🔧 API安全领域出现SAML" icon="document-text" >}}
+{{< card link="/news/2026-07/2026-07-20" title="安全洞察日报 2026/7/20" subtitle="📅 2026年7月20日 安全日报" icon="shield-exclamation" >}}
+{{< card link="/news/2026-07/2026-07-19" title="安全洞察日报 2026/7/19" subtitle="今日摘要：公安部通报37款违规应用，小程序监管趋严；梆梆安全报告揭示超八成APP存隐私违规，数据出境风险高企；SonicWall SMA零日漏洞遭野外利用，WordPress wp2shell漏洞PoC公开；PortSwigger披露SAML认证绕过新手法；嘶吼发布2026网络安全产业图谱；7-Zi" icon="document-text" >}}
 <!-- LATEST_6_CARDS_END -->
 {{< /cards >}}
 
