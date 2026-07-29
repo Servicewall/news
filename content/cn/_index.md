@@ -11,7 +11,7 @@ cascade:
 {{< /hextra/hero-headline >}}
 
 <div style="margin-top: 2rem; margin-bottom: 4rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-  {{< hextra/hero-badge link="/news/2026-07/2026-07-27" >}}📡 阅读今日日报{{< /hextra/hero-badge >}}
+  {{< hextra/hero-badge link="/news/2026-07/2026-07-28" >}}📡 阅读今日日报{{< /hextra/hero-badge >}}
   {{< hextra/hero-badge link="/news/blog" >}}📊 浏览安全周报{{< /hextra/hero-badge >}}
   {{< hextra/hero-badge link="https://github.com/servicewall/news" >}}🤝 提交反馈{{< /hextra/hero-badge >}}
 </div>
@@ -34,12 +34,12 @@ cascade:
 
 {{< cards cols="3" >}}
 <!-- LATEST_6_CARDS_START -->
-{{< card link="/news/2026-07/2026-07-27" title="安全洞察日报 2026/7/27" subtitle="📅 2026/7/27 安全日报 · 数据与API安全" icon="bell" >}}
-{{< card link="/news/2026-07/2026-07-26" title="安全洞察日报 2026/7/26" subtitle="2026/7/26 安全日报摘要" icon="bell" >}}
-{{< card link="/news/2026-07/2026-07-25" title="安全洞察日报 2026/7/25" subtitle="📅 **今日摘要**：公安部通报37款违规APP，电商小程序成重灾区；梆梆安全报告显示超八成移动应用存在隐私风险；阿里开源库Fastjson曝未修复RCE漏洞遭在野攻击；Cl0p团伙利用PTC产品漏洞发起未认证RCE攻击；CISA公开GitHub凭证泄露事件复盘；开源AI代理Hermes被用于自动化" icon="chart-bar" >}}
-{{< card link="/news/2026-07/2026-07-24" title="安全洞察日报 2026/7/24" subtitle="📅 2026年7月24日 | 数据安全与API安全日报" icon="chart-bar" >}}
-{{< card link="/news/2026-07/2026-07-23" title="安全洞察日报 2026/7/23" subtitle="今日摘要" icon="chart-bar" >}}
-{{< card link="/news/2026-07/2026-07-22" title="安全洞察日报 2026/7/22" subtitle="📅 今日摘要" icon="eye" >}}
+{{< card link="/news/2026-07/2026-07-28" title="安全洞察日报 2026/7/28" subtitle="📅 2026年7月28日 安全日报" icon="eye" >}}
+{{< card link="/news/2026-07/2026-07-27" title="安全洞察日报 2026/7/27" subtitle="📅 2026/7/27 安全日报 · 数据与API安全" icon="eye" >}}
+{{< card link="/news/2026-07/2026-07-26" title="安全洞察日报 2026/7/26" subtitle="2026/7/26 安全日报摘要" icon="shield-exclamation" >}}
+{{< card link="/news/2026-07/2026-07-25" title="安全洞察日报 2026/7/25" subtitle="📅 **今日摘要**：公安部通报37款违规APP，电商小程序成重灾区；梆梆安全报告显示超八成移动应用存在隐私风险；阿里开源库Fastjson曝未修复RCE漏洞遭在野攻击；Cl0p团伙利用PTC产品漏洞发起未认证RCE攻击；CISA公开GitHub凭证泄露事件复盘；开源AI代理Hermes被用于自动化" icon="document-text" >}}
+{{< card link="/news/2026-07/2026-07-24" title="安全洞察日报 2026/7/24" subtitle="📅 2026年7月24日 | 数据安全与API安全日报" icon="eye" >}}
+{{< card link="/news/2026-07/2026-07-23" title="安全洞察日报 2026/7/23" subtitle="今日摘要" icon="eye" >}}
 <!-- LATEST_6_CARDS_END -->
 {{< /cards >}}
 
